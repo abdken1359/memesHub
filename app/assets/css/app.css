@@ -7,10 +7,10 @@
     --color-surface-variant:var(--color-gray-100);
     --color-content:var(--color-gray-800);
     --color-primary:var(--color-yellow-500);
-    --color-secondary:var(--color-sky-500);
-    --color-inside:var(--color-gray-50);
+    --color-secondary:var(--color-cyan-500);
+    --color-inside:var(--color-white);
     --color-accent:var(--color-gray-500);
-    --radius-primary:var(--radius-xl);
+    --radius-primary:var(--radius-md);
 
 
     /*Dark mode variables*/
@@ -18,6 +18,7 @@
     --color-content-dark:var(--color-gray-100);
     --color-surface-variant-dark:var(--color-gray-700);
     --color-primary-dark:var(--color-yellow-300);
+    --color-secondary-dark:var(--color-cyan-300);
 }
 @layer base{
     *{
@@ -27,46 +28,61 @@
         @apply scroll-smooth;
     }
     body{
-        @apply break-words min-h-screen bg-surface
+        @apply break-words min-h-screen bg-surface text-sm md:text-base
          text-content dark:bg-surface-dark dark:text-content-dark;
     }
     h1,h2,h3,h4,h5,h6{
         @apply font-semibold mb-4;
     }
     h1{
-        @apply text-3xl lg:text-4xl;
+        @apply text-3xl md:text-4xl;
     }
     h2{
-        @apply text-2xl lg:text-3xl;
+        @apply text-2xl md:text-3xl;
     }
     h3{
-        @apply text-xl lg:text-2xl;
+        @apply text-xl md:text-2xl;
     }
     button,.btn{
         @apply inline-flex items-center justify-center text-center px-4 py-2 cursor-pointer
-        rounded-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-primary
-        dark:focus-visible:ring-primary/80
+        rounded-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/50
+        dark:focus-visible:ring-primary-dark/80 text-base
         ;
     }
     a{
-        @apply text-primary dark:text-primary/80;
+        @apply text-primary dark:text-primary-dark focus:outline-none focus-visible:underline;
     }
+    img,.img{
+        @apply block w-full mx-auto h-auto object-cover object-center;
+    }
+    
 }
 
 @utility a-container{
     @apply container mx-auto p-4;
 }
-
+@utility logo-img{
+    @apply w-8 h-8;
+}
 @utility btn-primary{
-    @apply bg-primary hover:bg-primary/80 text-inside active:bg-primary
-    dark:bg-primary-dark dark:text-content dark:hover:bg-primary-dark/80 dark:active:bg-primary-dark
+    @apply bg-primary hover:bg-primary/80 text-inside active:bg-primary focus-visible:ring-primary/50
+    dark:bg-primary-dark dark:text-content dark:hover:bg-primary-dark/90
+     dark:active:bg-primary-dark
     ;
 }
 
+@utility btn-ghost-primary{
+    @apply hover:bg-primary/20 hover:text-primary dark:hover:bg-primary-dark/20
+    dark:hover:text-primary-dark
+    ;
+}
+@utility icon{
+    @apply text-lg lg:text-xl;
+}
 @utility simple-flex{
     @apply flex items-center justify-center gap-4 flex-wrap;
 }
 
 @utility main-nav{
-    @apply flex items-center sticky top-0 z-10 h-14 border-b border-accent px-6;
+    @apply flex items-center sticky top-0 z-10 h-14 border-b-2 border-accent/20 bg-transparent backdrop-blur-3xl px-6;
 }
