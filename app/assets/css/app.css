@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@theme{
+    --font-sans:'Open Sans','Nunito','Verdana';
+    --font-mono:'Fira Code',monospace;
+    --color-surface:var(--color-white);
+    --color-surface-variant:var(--color-gray-100);
+    --color-content:var(--color-gray-800);
+    --color-primary:var(--color-yellow-500);
+    --color-secondary:var(--color-sky-500);
+    --color-inside:var(--color-gray-50);
+    --color-accent:var(--color-gray-500);
+    --radius-primary:var(--radius-xl);
+
+
+    /*Dark mode variables*/
+    --color-surface-dark:var(--color-gray-800);
+    --color-content-dark:var(--color-gray-100);
+    --color-surface-variant-dark:var(--color-gray-700);
+    --color-primary-dark:var(--color-yellow-300);
+}
+@layer base{
+    *{
+        @apply transition-all duration-150 ease-in;
+    }
+    html{
+        @apply scroll-smooth;
+    }
+    body{
+        @apply break-words min-h-screen bg-surface
+         text-content dark:bg-surface-dark dark:text-content-dark;
+    }
+    h1,h2,h3,h4,h5,h6{
+        @apply font-semibold mb-4;
+    }
+    h1{
+        @apply text-3xl lg:text-4xl;
+    }
+    h2{
+        @apply text-2xl lg:text-3xl;
+    }
+    h3{
+        @apply text-xl lg:text-2xl;
+    }
+    button,.btn{
+        @apply inline-flex items-center justify-center text-center px-4 py-2 cursor-pointer
+        rounded-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-primary
+        dark:focus-visible:ring-primary/80
+        ;
+    }
+    a{
+        @apply text-primary dark:text-primary/80;
+    }
+}
+
+@utility a-container{
+    @apply container mx-auto p-4;
+}
+
+@utility btn-primary{
+    @apply bg-primary hover:bg-primary/80 text-inside active:bg-primary
+    dark:bg-primary-dark dark:text-content dark:hover:bg-primary-dark/80 dark:active:bg-primary-dark
+    ;
+}
+
+@utility simple-flex{
+    @apply flex items-center justify-center gap-4 flex-wrap;
+}
+
+@utility main-nav{
+    @apply flex items-center sticky top-0 z-10 h-14 border-b border-accent px-6;
+}
