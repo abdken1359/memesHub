@@ -11,6 +11,7 @@
              <button class="btn-primary mt-4">Primary</button>
              <button class="btn-secondary mt-4">Secondary</button>
         </section>
+        <h2 style=" margin-top: 1000px;">Find me!!</h2>
     </div>
 </template>
 <script setup lang="ts">

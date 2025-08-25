@@ -4,7 +4,7 @@
     --font-sans:'Open Sans','Nunito','Verdana';
     --font-mono:'Fira Code',monospace;
     --color-surface:var(--color-white);
-    --color-surface-variant:var(--color-gray-100);
+    --color-surface-variant:var(--color-gray-50);
     --color-content:var(--color-gray-800);
     --color-primary:var(--color-yellow-500);
     --color-secondary:var(--color-cyan-500);
@@ -16,9 +16,9 @@
 
 
     /*Dark mode variables*/
-    --color-surface-dark:var(--color-gray-800);
+    --color-surface-dark:var(--color-slate-800);
     --color-content-dark:var(--color-gray-100);
-    --color-surface-variant-dark:var(--color-gray-700);
+    --color-surface-variant-dark:var(--color-slate-700);
     --color-primary-dark:var(--color-yellow-300);
     --color-secondary-dark:var(--color-cyan-300);
     --color-zinc-dark:var(--color-zinc-100);
@@ -109,8 +109,37 @@
 
 @utility main-nav{
     @apply flex items-center sticky top-0 z-10 h-14 border-b-2 border-accent/20
-     bg-transparent backdrop-blur-3xl px-6;
+     bg-white/50 dark:bg-surface-dark/50 backdrop-blur-xl px-6;
 }
+@utility main-flex{
+    @apply flex flex-col-reverse lg:flex-row; 
+}
+@utility main-sidebar{
+    @apply hidden lg:block flex-1 lg:flex-1/4 border-r-2 border-accent/20
+     h-[91vh] overflow-x-hidden overflow-y-auto  sticky top-14 z-15 
+     bg-surface dark:bg-surface-dark;
+}
+
 @utility main-content{
-    @apply flex flex-col lg:flex-row; 
+    @apply flex-1 lg:flex-3/4 lg:pl-4 bg-surface-variant dark:bg-surface-dark;
+}
+
+@utility subtitle{
+    @apply text-accent text-sm inline-block; 
+}
+@utility sidebar-nav{
+    @apply mt-4;
+}
+@utility sidebar-nav-item{
+    @apply flex items-center gap-2 w-full px-4 py-3 
+    text-content dark:text-content-dark hover:text-primary
+     dark:hover:text-primary-dark 
+     focus-visible:no-underline focus-visible:bg-primary/10 focus-visible:text-primary
+     dark:focus-visible:text-primary-dark
+    ;
+}
+
+@utility sidebar-nav-item-active{
+    @apply bg-primary/10 text-primary dark:bg-primary-dark/10 dark:text-primary-dark
+    ;
 }

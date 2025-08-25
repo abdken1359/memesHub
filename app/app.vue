@@ -11,7 +11,7 @@ useHead({
   },
   link:[
     {
-      rel:'icon',type:'image/png',href:'/logoDark.png',
+      rel:'icon',type:'image/png',href:'/logoLight.png',
     }
   ]
   
