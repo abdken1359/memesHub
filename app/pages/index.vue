@@ -10,6 +10,14 @@
 </template>
 <script setup lang="ts">
 useSeoMeta({
-    title:'MemesHub - Free Memes for y\'all!'
+    title:'MemesHub - Free Memes for y\'all!',
+    ogTitle:'MemesHub - Free Memes for y\'all!',
+    description:'Find the best random memes at memeHub. You can also save your favorite memes without an account, in your browser.',
+    ogDescription:'Find the best random memes at memeHub. You can also save your favorite memes without an account, in your browser.',
+    ogUrl:'https://memeshub.vercel.app',
+    ogImage:'/logoLight.png',
+    ogImageAlt:'Logo',
+    ogType:'website',
+    
 })
 </script>
