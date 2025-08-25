@@ -5,6 +5,11 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut in et ab sed illo enim,
                  quia sapiente tempore? 
                 Laboriosam vero perspiciatis libero harum sequi dolor maxime sunt autem possimus consequuntur!</p>
+           
+            </section>
+        <section class="space-x-4">
+             <button class="btn-primary mt-4">Primary</button>
+             <button class="btn-secondary mt-4">Secondary</button>
         </section>
     </div>
 </template>

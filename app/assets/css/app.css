@@ -8,7 +8,9 @@
     --color-content:var(--color-gray-800);
     --color-primary:var(--color-yellow-500);
     --color-secondary:var(--color-cyan-500);
+    --color-zinc:var(--color-zinc-800);
     --color-inside:var(--color-white);
+
     --color-accent:var(--color-gray-500);
     --radius-primary:var(--radius-md);
 
@@ -19,6 +21,7 @@
     --color-surface-variant-dark:var(--color-gray-700);
     --color-primary-dark:var(--color-yellow-300);
     --color-secondary-dark:var(--color-cyan-300);
+    --color-zinc-dark:var(--color-zinc-100);
 }
 @layer base{
     *{
@@ -28,7 +31,7 @@
         @apply scroll-smooth;
     }
     body{
-        @apply break-words min-h-screen bg-surface text-sm md:text-base
+        @apply break-words min-h-screen bg-surface text-base md:text-base
          text-content dark:bg-surface-dark dark:text-content-dark;
     }
     h1,h2,h3,h4,h5,h6{
@@ -45,8 +48,9 @@
     }
     button,.btn{
         @apply inline-flex items-center justify-center text-center px-4 py-2 cursor-pointer
+        text-content dark:text-content-dark
         rounded-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/50
-        dark:focus-visible:ring-primary-dark/80 text-base
+        dark:focus-visible:ring-primary-dark/80 text-base md:text-base
         ;
     }
     a{
@@ -54,6 +58,9 @@
     }
     img,.img{
         @apply block w-full mx-auto h-auto object-cover object-center;
+    }
+    section{
+        @apply my-4 last-of-type:mt-4 last-of-type:mb-0;
     }
     
 }
@@ -65,16 +72,33 @@
     @apply w-8 h-8;
 }
 @utility btn-primary{
-    @apply bg-primary hover:bg-primary/80 text-inside active:bg-primary focus-visible:ring-primary/50
+    @apply bg-primary hover:bg-primary/80 text-inside active:bg-primary
+     focus-visible:ring-primary/50
     dark:bg-primary-dark dark:text-content dark:hover:bg-primary-dark/90
      dark:active:bg-primary-dark
     ;
 }
 
 @utility btn-ghost-primary{
-    @apply hover:bg-primary/20 hover:text-primary dark:hover:bg-primary-dark/20
+    @apply hover:bg-primary/10 hover:text-primary dark:hover:bg-primary-dark/20
     dark:hover:text-primary-dark
     ;
+}
+@utility btn-secondary{
+    @apply bg-secondary hover:bg-secondary/80 text-inside active:bg-secondary
+     focus-visible:ring-secondary/50
+    dark:bg-secondary-dark dark:text-content dark:hover:bg-secondary-dark/90
+     dark:active:bg-secondary-dark;
+}
+@utility btn-ghost-secondary{
+     @apply hover:bg-secondary/10 hover:text-secondary dark:hover:bg-secondary-dark/20
+    dark:hover:text-secondary-dark focus-visible:ring-secondary/50
+     dark:focus-visible:ring-secondary-dark/80
+    ;
+}
+
+@utility btn-ghost{
+    @apply hover:bg-accent/10;
 }
 @utility icon{
     @apply text-lg lg:text-xl;
@@ -84,5 +108,9 @@
 }
 
 @utility main-nav{
-    @apply flex items-center sticky top-0 z-10 h-14 border-b-2 border-accent/20 bg-transparent backdrop-blur-3xl px-6;
+    @apply flex items-center sticky top-0 z-10 h-14 border-b-2 border-accent/20
+     bg-transparent backdrop-blur-3xl px-6;
+}
+@utility main-content{
+    @apply flex flex-col lg:flex-row; 
 }

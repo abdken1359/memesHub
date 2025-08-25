@@ -8,18 +8,25 @@
                 <span>MemesHub</span>
             </NuxtLink>
        </div> 
-       <div class="ml-auto">
+       <div class="ml-auto simple-flex gap-2">
+        <NuxtLink 
+        href="https://github.com/abdken1359/memesHub" 
+        aria-label="See project on github"
+        class="btn btn-ghost p-3"
+        >
+            <Icon name="mingcute:github-line" class="icon"/>
+        </NuxtLink>
+        <ClientOnly>
             <SmallComponentsThemeToggler/>
+        </ClientOnly>
        </div>
     </nav>
 </template>
 <script setup lang="ts">
 const isDark=useDark();
-const toggle=useToggle(isDark);
+
 const decideLogoImg=computed(()=>{
     return isDark.value?'/logodark.png':'/logoLight.png';
 })
-onMounted(()=>{
-    toggle();
-})
+
 </script>
