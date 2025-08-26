@@ -10,8 +10,9 @@
     --color-secondary:var(--color-teal-500);
     --color-zinc:var(--color-zinc-800);
     --color-inside:var(--color-white);
-
     --color-accent:var(--color-gray-500);
+    --color-success:var(--color-green-500);
+    --color-error:var(--color-red-500);
     --radius-primary:var(--radius-md);
 
 
@@ -124,7 +125,7 @@
 }
 
 @utility main-content{
-    @apply flex-1 lg:flex-3/4 lg:pl-4 bg-surface-variant dark:bg-surface-dark overflow-x-auto;
+    @apply flex-1 lg:flex-3/4 lg:pl-4 bg-surface-variant dark:bg-surface-dark overflow-x-hidden;
 }
 
 @utility subtitle{
@@ -165,9 +166,18 @@
     @apply  grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ;
 }
 @utility meme-skeleton-header{
-    @apply  rounded-md bg-accent/30 animate-pulse h-[30vh] mb-4
+    @apply  rounded-primary bg-accent/30 animate-pulse h-[30vh] mb-4
 }
 @utility meme-skeleton-footer{
-  @apply  rounded-md bg-accent/30 animate-pulse h-[10vh]
+  @apply  rounded-primary bg-accent/30 animate-pulse h-[10vh]
 
+}
+
+@utility card{
+    @apply w-full rounded-primary bg-surface dark:bg-surface-variant overflow-hidden
+    shadow-sm hover:shadow-md
+    ;
+}
+@utility card-body{
+    @apply p-4;
 }

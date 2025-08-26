@@ -2,13 +2,10 @@
     <div class="a-container">
         <section>
             <h1>Favorite Memes!!</h1>
-            <pre class=" code">{{ memes }}</pre>
+            
             </section>
-        <section class="space-x-4">
-             <button class="btn-primary mt-4" @click="()=>refresh()">Refresh</button>
-             <button class="btn-secondary mt-4">Secondary</button>
-        </section>
-        <h2 style=" margin-top: 1000px;">Find me!!</h2>
+        
+        
     </div>
 </template>
 <script setup lang="ts">
@@ -23,5 +20,5 @@ useSeoMeta({
     ogType:'website',
     
 })
-const {memes,refresh}=await useFetchMemes()
+
 </script>

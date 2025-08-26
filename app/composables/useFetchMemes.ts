@@ -1,7 +1,6 @@
-export const useFetchMemes=async () =>{
-    const {data:memes,refresh}=useFetch("https://meme-api.com/gimme/10");
+export const useFetchMemes=async (count:number) =>{
+    const data =await $fetch(`https://meme-api.com/gimme/${Math.floor(count)}`)
     return{
-        memes,
-        refresh
+       data
     }
 }
