@@ -13,15 +13,13 @@
 useSeoMeta({
     title:'MemesHub - Free Memes for y\'all!',
     ogTitle:'MemesHub - Free Memes for y\'all!',
-    description:'Find the best random memes at memeHub. You can also save your favorite memes without an account, in your browser.',
-    ogDescription:'Find the best random memes at memeHub. You can also save your favorite memes without an account, in your browser.',
+    description:'Find the best reddit memes at MemesHub. You can also save your favorite memes without an account, in your browser.',
+    ogDescription:'Find the best reddit memes at MemesHub. You can also save your favorite memes without an account, in your browser.',
     ogUrl:'https://memeshub.vercel.app',
     ogImage:'/logoLight.png',
     ogImageAlt:'Logo',
     ogType:'website',
     
 })
-onBeforeRouteLeave(()=>{
-    console.log("Leaving route...")
-})
+
 </script>

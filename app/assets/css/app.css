@@ -19,7 +19,7 @@
 
     /*Dark mode variables*/
     --color-surface-dark:var(--color-slate-800);
-    --color-content-dark:var(--color-gray-100);
+    --color-content-dark:var(--color-slate-100);
     --color-surface-variant-dark:var(--color-slate-700);
     --color-primary-dark:var(--color-yellow-300);
     --color-secondary-dark:var(--color-teal-300);
@@ -56,7 +56,7 @@
         ;
     }
     a{
-        @apply text-primary dark:text-primary-dark focus:outline-none focus-visible:underline;
+        @apply text-secondary dark:text-primary-dark focus:outline-none focus-visible:underline;
     }
     img,.img{
         @apply block w-full mx-auto h-auto object-cover object-center;
