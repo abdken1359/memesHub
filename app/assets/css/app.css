@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./transitions.css";
 @custom-variant dark (&:where(.dark, .dark *));
 @theme{
     --font-sans:'Open Sans','Nunito','Verdana';
@@ -174,10 +175,24 @@
 }
 
 @utility card{
-    @apply w-full rounded-primary bg-surface dark:bg-surface-variant overflow-hidden
+    @apply w-full rounded-primary bg-surface dark:bg-surface-variant-dark border-2 
+    border-accent/20
+    overflow-hidden
     shadow-sm hover:shadow-md
     ;
 }
 @utility card-body{
     @apply p-4;
+}
+
+@utility modal{
+    @apply fixed inset-0 bg-black/50 z-20
+}
+
+@utility modal-close{
+    @apply absolute top-10 right-10 text-inside z-25;
+}
+
+@utility modal-image{
+    @apply max-w-[90vw] max-h-[90vh] object-contain mx-auto my-auto relative top-1/5 md:top-10; 
 }

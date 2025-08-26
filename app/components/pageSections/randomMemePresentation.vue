@@ -4,7 +4,23 @@
         <UISkeletonMemes v-if="isLoading" :count="3" />
        <div v-else>
          <div v-if="!anyError" class="my-4">
-            <p class="text-success">Memes Loaded successfully!</p>
+           <div class=" simple-grid">
+            <template v-for="(meme,index) in loadedMemes.memes" :key="index">
+                <div class=" card">
+                <div class="h-[50vh]">
+                   <NuxtImg 
+                   :src="meme.url" class="h-full w-full object-fill 
+                   cursor-zoom-in" alt="Meme Image" 
+                   @click.stop="UI.openImageViewer(meme.url,'Meme Image')"/>
+                    
+                </div>
+                <div class=" card-body">
+                    <p>You got your meme!</p>
+                </div>
+            </div>
+            </template>
+            
+           </div>
         </div>
         <div v-else>
             <p class="text-error">Oh no! A damn error occurred!</p>
@@ -16,6 +32,7 @@
     </section>
 </template>
 <script setup lang="ts">
+const UI=useUIStore()
 const isLoading=ref(true);
 const loadedMemes=ref<unknown>([]);
 const anyError=ref(false);
