@@ -175,7 +175,7 @@
 }
 
 @utility card{
-    @apply w-full rounded-primary bg-surface dark:bg-surface-variant-dark border-2 
+    @apply w-full rounded-primary bg-surface dark:bg-surface-variant-dark border-2
     border-accent/20
     overflow-hidden
     shadow-sm hover:shadow-md
@@ -194,5 +194,6 @@
 }
 
 @utility modal-image{
-    @apply max-w-[90vw] max-h-[90vh] object-contain mx-auto my-auto relative top-1/5 md:top-10; 
+    @apply max-w-[90vw] max-h-[90vh] object-contain cursor-zoom-out
+  absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
 }

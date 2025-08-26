@@ -5,7 +5,16 @@
         <button class="modal-close" aria-label="Close Modal" @click="UI.closeImageViewer()">
             <Icon name="mingcute:close-fill" class="icon"/>
         </button>
-        <NuxtImg ref="modalImage" :src="UI.imageSrc" :alt="UI.imageAlt" class=" modal-image" />
+        <Transition name="scale">
+        <NuxtImg 
+        v-show="UI.isImageViewerOpened" 
+        ref="modalImage" 
+        :src="UI.imageSrc" 
+        :alt="UI.imageAlt" 
+        class=" modal-image" 
+        @click="UI.closeImageViewer()"
+        />
+        </Transition>
     </div>
     </Transition>
     </div>

@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div class="hero-box" :style="{backgroundImage:`url(${randomImage?.src})`}">
+        <div class="hero-box" :style="{backgroundImage:`url(${memesImages[2]?.src})`}">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <span>Free Memes for y'all!!</span>
