@@ -7,7 +7,7 @@
     --color-surface-variant:var(--color-gray-50);
     --color-content:var(--color-gray-800);
     --color-primary:var(--color-yellow-500);
-    --color-secondary:var(--color-cyan-500);
+    --color-secondary:var(--color-teal-500);
     --color-zinc:var(--color-zinc-800);
     --color-inside:var(--color-white);
 
@@ -20,7 +20,7 @@
     --color-content-dark:var(--color-gray-100);
     --color-surface-variant-dark:var(--color-slate-700);
     --color-primary-dark:var(--color-yellow-300);
-    --color-secondary-dark:var(--color-cyan-300);
+    --color-secondary-dark:var(--color-teal-300);
     --color-zinc-dark:var(--color-zinc-100);
 }
 @layer base{
@@ -48,7 +48,7 @@
     }
     button,.btn{
         @apply inline-flex items-center justify-center text-center px-4 py-2 cursor-pointer
-        text-content dark:text-content-dark
+        text-content dark:text-content-dark font-bold dark:font-semibold
         rounded-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/50
         dark:focus-visible:ring-primary-dark/80 text-base md:text-base
         ;
@@ -61,6 +61,9 @@
     }
     section{
         @apply my-4 last-of-type:mt-4 last-of-type:mb-0;
+    }
+    code,.code{
+        @apply font-mono text-base;
     }
     
 }
@@ -121,7 +124,7 @@
 }
 
 @utility main-content{
-    @apply flex-1 lg:flex-3/4 lg:pl-4 bg-surface-variant dark:bg-surface-dark;
+    @apply flex-1 lg:flex-3/4 lg:pl-4 bg-surface-variant dark:bg-surface-dark overflow-x-auto;
 }
 
 @utility subtitle{
@@ -142,4 +145,12 @@
 @utility sidebar-nav-item-active{
     @apply bg-primary/10 text-primary dark:bg-primary-dark/10 dark:text-primary-dark
     ;
+}
+@utility current-page-text{
+    @apply text-accent text-sm;
+}
+@utility hero-box{
+    @apply w-full mx-auto text-center flex items-center justify-center relative p-4
+    bg-linear-to-r from-primary-dark to-primary
+    text-inside h-[50vh] rounded-primary mb-6 text-4xl;
 }

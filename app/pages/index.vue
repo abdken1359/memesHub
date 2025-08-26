@@ -1,7 +1,8 @@
 <template>
     <div class="a-container">
         <section>
-            <h1>Hello Memes!!</h1>
+           <small-components-page-indicator title="Home" icon="mingcute:home-1-line"/>
+           <small-components-main-hero/>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut in et ab sed illo enim,
                  quia sapiente tempore? 
                 Laboriosam vero perspiciatis libero harum sequi dolor maxime sunt autem possimus consequuntur!</p>
