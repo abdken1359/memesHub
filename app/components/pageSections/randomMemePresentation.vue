@@ -43,7 +43,7 @@ const fetchSixMemes=async()=>{
     setTimeout(async ()=>{
         
         try{
-            const {data}=await useFetchMemes(6);
+            const {data}=await useFetchMemes(50);
             loadedMemes.value=data
             anyError.value=false
 
