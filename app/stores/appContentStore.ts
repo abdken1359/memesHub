@@ -16,6 +16,19 @@ export const useContentStore=defineStore('contentStore',()=>{
         },
         {
             id:2,
+            icon:'mingcute:random-line',
+            name:'Random Memes',
+            href:'/random_memes'
+
+        },
+        {
+            id:3,
+            icon:'mingcute:reddit-line',
+            name:'Subreddits',
+            href:'/subreddits'
+        },
+        {
+            id:4,
             icon:'mingcute:star-line',
             name:'Favorites',
             href:'/favorites',
@@ -23,8 +36,22 @@ export const useContentStore=defineStore('contentStore',()=>{
 
 
     ]);
+    const supportedMemeSubreddits: string[] = [
+        "memes",
+        "dankmemes",
+        "me_irl",
+        "wholesomememes",
+        "2meirl4meirl",
+        "AdviceAnimals",
+        "Animemes",
+        "comedyheaven",
+        "historymemes",
+        "PrequelMemes"
+        ];
+
     return {
         message,
         navLinks,
+        supportedMemeSubreddits
     }
 })

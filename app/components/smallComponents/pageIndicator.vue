@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <section>
         <div class="mb-4 simple-flex justify-start text-accent">
             <Icon :name="icon"/>
             <span class=" current-page-text">{{title}}</span>
         </div>
-    </div>
+    </section>
 </template>
 <script setup lang="ts">
     defineProps({

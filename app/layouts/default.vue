@@ -1,5 +1,6 @@
 <template>
     <div>
+        <NuxtLoadingIndicator color="yellow"/>
         <UIMainNav/>
         <div class=" main-flex">
         <UIMainSidebar class="main-sidebar"/>

@@ -1,17 +1,11 @@
 <template>
     <div class="a-container">
-        <section>
+        
            <small-components-page-indicator title="Home" icon="mingcute:home-1-line"/>
            <small-components-main-hero/>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut in et ab sed illo enim,
-                 quia sapiente tempore? 
-                Laboriosam vero perspiciatis libero harum sequi dolor maxime sunt autem possimus consequuntur!</p>
-           
-            </section>
-        <section class="space-x-4">
-             <button class="btn-primary mt-4">Primary</button>
-             <button class="btn-secondary mt-4">Secondary</button>
-        </section>
+            <page-sections-random-meme-presentation/>
+        
+        
         <h2 style=" margin-top: 1000px;">Find me!!</h2>
     </div>
 </template>
@@ -26,5 +20,8 @@ useSeoMeta({
     ogImageAlt:'Logo',
     ogType:'website',
     
+})
+onBeforeRouteLeave(()=>{
+    console.log("Leaving route...")
 })
 </script>
