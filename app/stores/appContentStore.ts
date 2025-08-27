@@ -1,3 +1,4 @@
+import { useStorage } from "@vueuse/core"
 interface NavLinks{
     id:number,
     icon:string,
@@ -5,6 +6,17 @@ interface NavLinks{
     href:string,
 
 }
+type Meme = {
+  postLink: string;
+  subreddit: string;
+  title: string;
+  url: string;
+  nsfw: boolean;
+  spoiler: boolean;
+  author: string;
+  ups: number;
+  preview: string[];
+};
 export const useContentStore=defineStore('contentStore',()=>{
     const message=ref("Hello!");
     const navLinks=ref<NavLinks[]>([
@@ -36,6 +48,22 @@ export const useContentStore=defineStore('contentStore',()=>{
 
 
     ]);
+    const favoriteMemes=useStorage<Meme[]>("favoriteMemes",[])
+    const addMemeToFavorites=(meme:Meme):void=>{
+        favoriteMemes.value.push(meme);
+        console.log(favoriteMemes.value)
+
+    }
+    const removeMemeFromFavorites=(postLink:string):void=>{
+        const postlinkIndex:number=favoriteMemes.value.findIndex((meme)=>meme.postLink===postLink)
+        if(postlinkIndex!==1){
+            favoriteMemes.value.splice(postlinkIndex,1);
+            console.log(favoriteMemes.value);
+        }else{
+            console.error("Index not found");
+        }
+        
+    }
     const supportedMemeSubreddits: string[] = [
         "memes",
         "dankmemes",
@@ -52,6 +80,10 @@ export const useContentStore=defineStore('contentStore',()=>{
     return {
         message,
         navLinks,
-        supportedMemeSubreddits
+        supportedMemeSubreddits,
+        favoriteMemes,
+
+        addMemeToFavorites,
+        removeMemeFromFavorites,
     }
 })

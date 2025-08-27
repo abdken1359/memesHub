@@ -184,7 +184,9 @@
 @utility card-body{
     @apply p-4;
 }
-
+@utility card-footer{
+    @apply p-2 simple-flex justify-start gap-2 border-t border-accent/20;
+}
 @utility modal{
     @apply fixed inset-0 bg-black/50 z-20
 }
