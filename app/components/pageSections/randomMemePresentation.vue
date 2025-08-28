@@ -12,7 +12,15 @@
                 Retry
             </button>
         </div>
+        <div class="simple-flex justify-end mt-4 ">
+            <NuxtLink to="/random_memes" class="btn btn-primary">
+                See More Memes
+                <Icon name="mingcute:arrow-right-circle-fill" class="icon"/>
+
+            </NuxtLink>
+        </div>
        </div>
+
     </section>
 </template>
 <script setup lang="ts">
@@ -45,9 +53,9 @@ const fetchSixMemes=async()=>{
             const {data:datab}=await useFetchMemes(50);
             const {data:datac}=await useFetchMemes(50);
             const {data:datad}=await useFetchMemes(50);
-
-            const extractedMemes=[...new Set(dataa.memes.concat(datab.memes,datac.memes,datad.memes))];
-            const finalMemes=shuffleArray(extractedMemes);
+            const allMemes = [...dataa.memes, ...datab.memes, ...datac.memes, ...datad.memes];
+            
+            const finalMemes=shuffleArray(removeArrayDuplicates(allMemes));
             if (Array.isArray(finalMemes)){
             loadedMemes.value=finalMemes.filter((meme)=>{
                 return meme.nsfw===false;
@@ -63,7 +71,7 @@ const fetchSixMemes=async()=>{
         }finally{
             isLoading.value=false
         }
-    },2000)
+    },1000)
 }
 onMounted(async ()=>{
     await fetchSixMemes()

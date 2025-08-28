@@ -4,6 +4,7 @@
            <small-components-page-indicator title="Home" icon="mingcute:home-1-line"/>
            <small-components-main-hero/>
             <page-sections-random-meme-presentation/>
+            <page-sections-choose-subreddits/>
         
         
         

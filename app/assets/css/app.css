@@ -56,7 +56,9 @@
         ;
     }
     a{
-        @apply text-secondary dark:text-primary-dark focus:outline-none focus-visible:underline;
+        @apply text-secondary dark:text-secondary-dark focus:outline-none focus-visible:underline
+        flex items-center gap-2 flex-wrap;
+        
     }
     img,.img{
         @apply block w-full mx-auto h-auto object-cover object-center;

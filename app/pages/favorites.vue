@@ -1,8 +1,10 @@
 <template>
     <div class="a-container">
+        <small-components-page-indicator title="Favorites" icon="mingcute:star-line"/>
         <section>
-            <h1>Favorite Memes!!</h1>
-            
+          
+            <p class="text-accent mb-4">{{ contents.favoriteMemes.length }} favorites.</p>
+           <page-sections-memes-looper :loaded-memes="contents.favoriteMemes"/>
             </section>
         
         
@@ -20,5 +22,8 @@ useSeoMeta({
     ogType:'website',
     
 })
-
+const contents=useContentStore()
+onMounted(()=>{
+    contents.loadFavoriteMemes()
+})
 </script>

@@ -96,4 +96,7 @@ const isFavorite=(meme:Meme):boolean=>{
     return contents.favoriteMemes.includes(meme);
 
 }
+onMounted(()=>{
+    contents.loadFavoriteMemes()
+})
 </script>
