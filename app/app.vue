@@ -1,12 +1,17 @@
 <template>
   <div>
     <NuxtRouteAnnouncer />
+    <ClientOnly>
+    <Transition name="snackbar">
+    <UISnackbar v-show="UI.isSnackbarOpened"/>
+    </Transition>
     <SmallComponentsImageViewer />
+    </ClientOnly>
    <NuxtLayout/>
   </div>
 </template>
 <script lang="ts" setup>
-
+const UI=useUIStore();
 useHead({
   htmlAttrs:{
     lang:'en',

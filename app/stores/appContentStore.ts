@@ -1,4 +1,5 @@
 import { removeArrayDuplicates } from "#imports"
+import { useUIStore } from "./uiStore";
 interface NavLinks{
     id:number,
     icon:string,
@@ -24,7 +25,7 @@ type Meme = {
   preview: string[];
 };
 export const useContentStore=defineStore('contentStore',()=>{
-    const message=ref("Hello!");
+    const UI=useUIStore()
     const navLinks=ref<NavLinks[]>([
         {
             id:1,
@@ -58,7 +59,9 @@ export const useContentStore=defineStore('contentStore',()=>{
     const addMemeToFavorites=(meme:Meme):void=>{
         
         favoriteMemes.value.push(meme);
-        localStorage.setItem("favoriteMemes",JSON.stringify(removeArrayDuplicates(favoriteMemes.value)));
+        localStorage.setItem("favoriteMemes",
+            JSON.stringify(removeArrayDuplicates(favoriteMemes.value)));
+        UI.triggerSnackbar("success","Meme added to favorites")
         
 
     }
@@ -66,8 +69,9 @@ export const useContentStore=defineStore('contentStore',()=>{
         const postlinkIndex:number=favoriteMemes.value.findIndex((meme)=>meme.postLink===postLink)
         if(postlinkIndex!==-1){
             favoriteMemes.value.splice(postlinkIndex,1);
-            localStorage.setItem("favoriteMemes",JSON.stringify(removeArrayDuplicates(favoriteMemes.value)));
-            console.log(favoriteMemes.value);
+            localStorage.setItem("favoriteMemes",
+                JSON.stringify(removeArrayDuplicates(favoriteMemes.value)));
+            UI.triggerSnackbar("success","Meme removed from favorites")
         }else{
             console.error("Index not found");
         }
@@ -166,7 +170,7 @@ export const useContentStore=defineStore('contentStore',()=>{
         ];
 
     return {
-        message,
+        
         navLinks,
         supportedMemeSubreddits,
         favoriteMemes,

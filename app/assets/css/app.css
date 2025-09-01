@@ -162,7 +162,7 @@
     @apply absolute inset-0 bg-linear-to-r z-0  from-black/40 to-black/60;
 }
 @utility hero-content{
-    @apply relative z-5  text-inside text-3xl md:text-4xl font-bold
+    @apply relative z-4  text-inside text-3xl md:text-4xl font-bold
 
 }
 
@@ -191,11 +191,11 @@
     @apply p-2 simple-flex justify-start gap-2 border-t border-accent/20;
 }
 @utility modal{
-    @apply fixed inset-0 bg-black/50 z-20
+    @apply fixed inset-0 bg-black/50 z-7;
 }
 
 @utility modal-close{
-    @apply absolute top-10 right-10 text-inside z-25;
+    @apply absolute top-10 right-10 text-inside z-8;
 }
 
 @utility modal-image{
@@ -203,8 +203,14 @@
   absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 @utility alert{
-    @apply fixed p-4 text-center simple-flex;
+    @apply fixed p-3 text-center simple-flex z-9 bottom-5 right-10 rounded-primary
+    bg-surface shadow-lg dark:bg-surface-variant-dark;
+    ;
 }
-@utility alert-primary{
-    @apply bg-primary text-inside dark:bg-primary-dark dark:text-content;
+@utility alert-success{
+    @apply bg-success text-inside/90;
+}
+
+@utility alert-error{
+    @apply bg-error text-inside/90;
 }

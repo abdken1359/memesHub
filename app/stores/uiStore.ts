@@ -14,12 +14,31 @@ export const useUIStore=defineStore('Ui Store',()=>{
         document.documentElement.style.overflowY="auto";
     }
 
+
+    const isSnackbarOpened=ref(false);
+    const snackbarStatus=ref<"success"|"error">("success");
+    const snackbarContent=ref("");
+    const triggerSnackbar=(status:"success"|"error",content:string)=>{
+        snackbarContent.value=content
+        snackbarStatus.value=status;
+        isSnackbarOpened.value=true;
+        setTimeout(()=>{
+            isSnackbarOpened.value=false;
+        },3000)
+        
+    }
     return {
         isImageViewerOpened,
         imageSrc,
         imageAlt,
 
+        isSnackbarOpened,
+        snackbarContent,
+        snackbarStatus,
+
         openImageViewer,
         closeImageViewer,
+
+        triggerSnackbar,
     }
 })
