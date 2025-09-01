@@ -10,7 +10,7 @@
                 >
                 
                     <div class=" card-body">
-                        <NuxtImg :src="subreddit.image" :alt="subreddit.imageAlt" class="w-3/4"/>
+                        <NuxtImg :src="subreddit.image" :alt="subreddit.imageAlt" class="w-1/2"/>
                         <p class="text-center mt-4">{{subreddit.name}}</p>
                     </div>
                
