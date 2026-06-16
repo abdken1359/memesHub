@@ -11,6 +11,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+//Just added comment!
 const UI=useUIStore();
 useHead({
   htmlAttrs:{
@@ -23,5 +24,5 @@ useHead({
   ]
   
 })
-
+console.log("A change!")
 </script>
